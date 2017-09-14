@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -53,7 +53,7 @@ class Board(QFrame):
 
     msg2Statusbar = pyqtSignal(str)
 
-    BoardWidth = 10
+    BoardWidth = 12
     BoardHeight = 22
     Speed = 300
 
@@ -120,7 +120,7 @@ class Board(QFrame):
 
         if self.isPaused:
             self.timer.stop()
-            self.msg2Statusbar.emit("paused")
+            self.msg2Statusbar.emit("press 'p' to paused")
 
         else:
             self.timer.start(Board.Speed, self)
@@ -178,8 +178,8 @@ class Board(QFrame):
             self.tryMove(self.curPiece, self.curX + 1, self.curY)
 
         elif key == Qt.Key_Down:
-            self.tryMove(self.curPiece.rotateRight(), self.curX, self.curY)
-
+            #self.tryMove(self.curPiece.rotateRight(), self.curX, self.curY)
+            self.dropDown()
         elif key == Qt.Key_Up:
             self.tryMove(self.curPiece.rotateLeft(), self.curX, self.curY)
 
