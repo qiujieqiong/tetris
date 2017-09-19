@@ -148,7 +148,7 @@ class BrickGame(object):
     back = list()
     # 格子
     gridBack = list()
-    preBack = list()
+    preBack = list()    
 
     # 初始化
     def init(self):
@@ -249,7 +249,7 @@ class BrickGame(object):
             if tag1 == True:
 
                 # 从上向下挪动
-                for m in xrange(i - 1, 0, -1):
+                for m in range(i - 1, 0, -1):
 
                     for n in range(0, self.cols):
                         self.back[m + 1][n] = self.back[m][n]
